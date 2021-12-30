@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About'
+import Contact from '../components/Contact'
+import FAQ from '../components/FAQ'
+import Gallery from '../components/Gallery'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import Services from '../components/Services'
+import Testimonials from '../components/Testimonials'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -23,6 +27,10 @@ export default function Home() {
 				<Hero />
 				<Services />
 				<About />
+				<Gallery />
+				<Testimonials />
+				<FAQ />
+				<Contact />
       </main>
 
       <footer>

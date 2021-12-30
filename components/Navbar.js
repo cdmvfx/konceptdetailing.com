@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { useState } from "react"
+import { RiMenuFill } from 'react-icons/ri'
 
 const Navbar = () => {
 
@@ -36,7 +37,7 @@ const Navbar = () => {
 	const [menu, setMenu] = useState(false);
 
 	return (
-		<div className="fixed w-full top-0 left-0">
+		<div className="fixed w-full top-0 left-0 z-50">
 			{menu && 
 				<div className="w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 backdrop-filter backdrop-blur-sm md:hidden">
 					<div className="cursor-pointer" onClick={() => setMenu(false)}>X</div>
@@ -55,7 +56,7 @@ const Navbar = () => {
 					))
 				}
 				<div><Image alt="Koncept Detailing" src="/images/logo.svg" width={80} height={80} /></div>
-				<div className="md:hidden uppercase tracking-widest text-xs cursor-pointer" onClick={() => setMenu(true)}>menu</div>
+				<div className="md:hidden uppercase tracking-widest text-xl cursor-pointer" onClick={() => setMenu(true)}><RiMenuFill /></div>
 				{
 					navLinksEnd.map(({label, value}, index) => (
 						<div key={`nav-item-end-${index}`} className="hidden md:block uppercase tracking-widest text-xs">{label}</div>
