@@ -9,12 +9,12 @@ import SectionHeader from "./elements/SectionHeader";
 const About = () => {
 
 	const aboutPhotos = [
-		<div className="p-4 flex items-center justify-center w-full h-full">
+		<div className="p-4 flex items-center justify-center w-full h-full" key="about-photo-1">
 			<div>
 				<Image src={photo1} key="about-photo-1" alt="My first time deployed." />
 			</div>
 		</div>,
-		<div className="p-4 flex items-center justify-center w-full h-full">
+		<div className="p-4 flex items-center justify-center w-full h-full" key="about-photo-2">
 			<div><Image src={photo2} key="about-photo-2" alt="Platoon" /></div>
 		</div>
 	]

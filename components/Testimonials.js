@@ -24,7 +24,7 @@ const Testimonials = () => {
 		<div className="px-8 py-16 text-center space-y-16 bg-neutral-900 flex flex-col md:flex-row items-baseline leading-8 md:space-y-0 md:text-2xl md:leading-10 border-white border-b">
 			{
 				reviews.map(({name, image, text}, index) => (
-					<div className='space-y-2 flex-1 md:p-8'>
+					<div className='space-y-2 flex-1 md:p-8' key={"testimonial-"+index}>
 						<div className='uppercase text-xl tracking-widest'>{name}</div>
 						<div className='flex justify-center text-yellow-600'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
 						<div className=''>{text}</div>

@@ -23,7 +23,7 @@ const FAQ = () => {
 			<div className="space-y-8 leading-8 md:text-2xl md:leading-10 md:max-w-2xl md:m-auto">
 				{
 					faq.map(({q, a}, index) => (
-						<div className="">
+						<div className="" key={'faq-' + index}>
 							<div className="font-extrabold">{q}</div>
 							<div>{a}</div>
 						</div>
