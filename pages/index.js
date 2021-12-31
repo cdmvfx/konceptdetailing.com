@@ -24,13 +24,13 @@ export default function Home() {
 
       <main>
 				<Navbar />
-				<Hero />
-				<Services />
-				<About />
-				<Gallery />
-				<Testimonials />
-				<FAQ />
-				<Contact />
+				<Hero name="main"/>
+				<Services id="services" />
+				<About id="about" />
+				<Testimonials id="testimonials" />
+				<Gallery id="gallery" />
+				<FAQ id="faq" />
+				<Contact id="contact" />
       </main>
 
       <footer>

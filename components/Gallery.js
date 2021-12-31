@@ -17,7 +17,7 @@ const Gallery = () => {
 	));
 
 	return (
-		<div className="w-full h-auto space-y-4 md:space-y-0 md:py-4 flex flex-col items-center justify-center bg-black border-white border-b">
+		<div id="gallery" className="w-full h-auto space-y-4 md:space-y-0 md:py-4 flex flex-col items-center justify-center bg-black border-white border-b">
 			<div className="w-full block md:hidden">
 				<Carousel
 					showIndicators={false}

@@ -15,7 +15,7 @@ const FAQ = () => {
 		}
 	];
   return (
-    <div className="text-center p-8 space-y-4 md:space-y-8 w-full bg-neutral-800 border-white border-b">
+    <div id="faq" className="text-center p-8 md:p-16 space-y-4 md:space-y-8 w-full bg-neutral-800 border-white border-b">
       <div className="uppercase text-xl tracking-widest md:text-4xl">FAQ</div>
       <div>
         <hr className="m-auto w-32 md:w-64" />

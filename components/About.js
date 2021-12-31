@@ -20,9 +20,12 @@ const About = () => {
 	]
 
   return (
-    <div className="w-full h-auto bg-neutral-800 md:flex md:p-16 border-white border-b">
+    <div id="about" className="w-full h-auto bg-neutral-800 md:flex md:p-16 border-white border-b">
       <div className="p-8 space-y-4 md:space-y-8 w-full">
-        <SectionHeader heading="About Me" />
+				<div className="uppercase text-xl tracking-widest md:text-left md:text-4xl">About Me</div>
+				<div>
+					<hr className="w-32 md:m-0 md:w-full" />
+				</div>
         <div className="text-left space-y-4  leading-8 md:text-2xl md:leading-10">
           <p className="">
             My name is Kevin Martinez - Costa Rican born, raised in Florida.
