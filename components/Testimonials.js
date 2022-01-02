@@ -1,4 +1,5 @@
 import { FaStar } from 'react-icons/fa';
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 const Testimonials = () => {
 
@@ -24,11 +25,16 @@ const Testimonials = () => {
 		<div id="testimonials" className="px-8 py-16 text-center space-y-16 bg-neutral-900 flex flex-col md:flex-row items-baseline leading-8 md:space-y-0 md:text-2xl md:leading-10 border-white border-b">
 			{
 				reviews.map(({name, image, text}, index) => (
-					<div className='space-y-2 flex-1 md:p-8' key={"testimonial-"+index}>
+					<motion.div 
+						initial={{opacity: 0, y: "200px"}}
+						whileInView={{opacity: 1, y: 0, transition: {type: "tween", duration: 1, ease: "easeOut"}}}
+						viewport={{amount: "200px", once: true}}
+						className='space-y-2 flex-1 md:p-8' key={"testimonial-"+index}
+					>
 						<div className='uppercase text-xl tracking-widest'>{name}</div>
 						<div className='flex justify-center text-yellow-600'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
 						<div className=''>{text}</div>
-					</div>
+					</motion.div>
 				))
 			}
 		</div>
