@@ -20,3 +20,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.kd-heading {
+	font-family: "Montserrat";
+}

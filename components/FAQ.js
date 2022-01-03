@@ -1,3 +1,6 @@
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+
+
 const FAQ = () => {
 
 	const faq = [
@@ -16,9 +19,23 @@ const FAQ = () => {
 	];
   return (
     <div id="faq" className="text-center p-8 md:p-16 space-y-4 md:space-y-8 w-full bg-neutral-800 border-white border-b">
-      <div className="uppercase text-xl tracking-widest md:text-4xl">FAQ</div>
+      <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{
+            opacity: 1,
+            transition: { type: "tween", duration: 1, ease: "easeOut" },
+          }}
+          viewport={{ amount: "500px", once: true }}
+					className="uppercase text-xl tracking-widest md:text-4xl">FAQ</motion.div>
       <div>
-        <hr className="m-auto w-32 md:w-64" />
+        <motion.hr 
+				initial={{ width: 0 }}
+				whileInView={{
+					width: "200px",
+					transition: { type: "tween", duration: 1, ease: "easeOut" },
+				}}
+				viewport={{ amount: "200px", once: true }}
+				className="m-auto w-32 md:w-64" />
       </div>
 			<div className="space-y-8 leading-8 md:text-2xl md:leading-10 md:max-w-2xl md:m-auto">
 				{

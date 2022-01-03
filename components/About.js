@@ -29,9 +29,9 @@ const About = () => {
   return (
     <div
       id="about"
-      className="w-full h-auto bg-neutral-800 md:flex md:p-16 border-white border-b"
+      className="w-full h-auto bg-neutral-800 md:flex md:p-16 border-white border-b flex flex-col md:flex-row items-center"
     >
-      <motion.div className="p-8 space-y-4 md:space-y-8 w-full">
+      <div className="p-8 space-y-4 md:space-y-8 w-full">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{
@@ -41,7 +41,7 @@ const About = () => {
           viewport={{ amount: "500px", once: true }}
           className="uppercase text-xl tracking-widest md:text-left md:text-4xl"
         >
-          About Me
+          FROM VETERAN TO DETAILER
         </motion.div>
         <div>
           <motion.hr
@@ -62,7 +62,7 @@ const About = () => {
             transition: { type: "tween", ease: "easeOut", duration: 1 },
           }}
           viewport={{ once: true, amount: "200px" }}
-          className="text-left space-y-4  leading-8 md:text-2xl md:leading-10"
+          className="text-left space-y-4  leading-8 md:text-xl md:leading-10"
         >
           <p className="">
             My name is Kevin Martinez - Costa Rican born, raised in Florida. I
@@ -72,11 +72,11 @@ const About = () => {
           </p>
           <p>
             The years in the Marine Corps were the most difficult of my life.
-            After 8 years, I left the Marine Corps to pursue my passion - auto
+            After 8 years, I left the Marine Corps to pursue my passion: auto
             detailing.
           </p>
         </motion.div>
-      </motion.div>
+      </div>
       <div className="flex justify-center w-full">
         <Carousel
           showIndicators={false}

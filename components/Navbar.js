@@ -45,9 +45,9 @@ const Navbar = () => {
         {menu && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 backdrop-filter backdrop-blur-sm md:hidden"
+            animate={{ opacity: 1, transition: {ease: "easeInOut"} }}
+            exit={{ opacity: 0, transition: {ease: "easeOut"} }}
+            className="w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 md:hidden"
           >
             <div className="cursor-pointer" onClick={() => setMenu(false)}>
               X
@@ -73,7 +73,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="flex flex-wrap justify-between md:justify-center items-center md:space-x-8 lg:space-x-12 py-4 px-8 md:-ml-[82px]">
+      <div className="flex flex-wrap justify-between md:justify-center items-center md:space-x-8 lg:space-x-12 px-8 md:-ml-[82px]">
         {navLinksStart.map(({ label, value }, index) => (
           <div
             key={`nav-item-start-${index}`}
