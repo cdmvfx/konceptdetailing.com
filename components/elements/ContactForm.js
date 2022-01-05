@@ -81,8 +81,7 @@ const ContactForm = () => {
 
   return (
     <div className="pt-4 w-full space-y-8 text-center md:w-1/3">
-			<div className="w-fit m-auto p-4 border cursor-pointer border-solid border-white text-center">
-				<PopupButton 
+			<PopupButton 
 					url="https://calendly.com/konceptdetailing" 
 				  text="SCHEDULE A DETAIL"
 					pageSettings={{
@@ -93,9 +92,8 @@ const ContactForm = () => {
 						primaryColor: '00a2ff',
 						textColor: '4d5055'
 					}}
-					styles={{letterSpacing: "2px"}}
+					styles={{letterSpacing: "2px", border: "1px solid white", cursor: "pointer", textAlign: "center", padding: "1rem" }}
 				/>
-        </div>
       <div className="md:text-2xl md:leading-10 space-y-4">
         <div className="space-y-4">
           <p>If you would like to schedule a date and time that works best for you, please click the button above to see my availability!</p>

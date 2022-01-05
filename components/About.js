@@ -3,6 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import photo1 from "../public/photos/marine-1.jpg";
 import photo2 from "../public/photos/marines-section.jpg";
+import photo3 from "../public/photos/kevin-cr.jpg";
+import collageVertical from '../public/photos/about-collage-vertical.png'
 import SectionHeader from "./elements/SectionHeader";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
@@ -29,19 +31,20 @@ const About = () => {
   return (
     <div
       id="about"
-      className="w-full h-auto bg-neutral-800 md:flex md:p-16 border-white border-b flex flex-col md:flex-row items-center"
+      className="relative w-full h-[1200px] lg:h-[1200px] bg-neutral-900 lg:flex lg:flex-row md:p-16 flex flex-col items-center"
     >
-      <div className="p-8 space-y-4 md:space-y-8 w-full">
+      <div className="p-8 space-y-4 md:space-y-8 w-full lg:w-1/2">
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{
             opacity: 1,
+						x: 0,
             transition: { type: "tween", duration: 1, ease: "easeOut" },
           }}
           viewport={{ amount: "500px", once: true }}
           className="uppercase text-xl tracking-widest md:text-left md:text-4xl"
         >
-          FROM VETERAN TO DETAILER
+          FROM MACHINE GUNNER TO DETAILER
         </motion.div>
         <div>
           <motion.hr
@@ -75,9 +78,40 @@ const About = () => {
             After 8 years, I left the Marine Corps to pursue my passion: auto
             detailing.
           </p>
+          <p>
+            The years in the Marine Corps were the most difficult of my life.
+            After 8 years, I left the Marine Corps to pursue my passion: auto
+            detailing.
+          </p>
         </motion.div>
       </div>
-      <div className="flex justify-center w-full">
+			{/* <div>
+				<Image src={collageVertical}/>
+			</div> */}
+			<div className="hidden lg:block h-full relative w-1/2">
+				<div className="kd-about-photo kd-about-photo-1-lg">
+					<Image src={photo1} alt="Kevin Martinez Marine" />
+				</div>
+				<div className="kd-about-photo kd-about-photo-2-lg">
+					<Image src={photo2} alt="Kevin Martinez Squad" />
+				</div>
+				<div className="kd-about-photo kd-about-photo-3-lg">
+					<Image src={photo3} alt="Kevin Martinez Costa Rica" />
+				</div>
+			</div>
+
+			<div className="lg:hidden h-full relative w-full">
+				<div className="kd-about-photo kd-about-photo-1">
+					<Image src={photo1} alt="Kevin Martinez Marine" />
+				</div>
+				<div className="kd-about-photo kd-about-photo-2">
+					<Image src={photo2} alt="Kevin Martinez Squad" />
+				</div>
+				<div className="kd-about-photo kd-about-photo-3">
+					<Image src={photo3} alt="Kevin Martinez Costa Rica" />
+				</div>
+			</div>
+      <div className="hidden flex justify-center  w-full md:hidden">
         <Carousel
           showIndicators={false}
           showThumbs={false}

@@ -33,7 +33,7 @@ const Gallery = () => {
 					{gallery}
 				</Carousel>
 			</div>
-			<div className="w-auto hidden md:block">
+			<div className="w-full hidden md:block">
 				<Carousel
 					showIndicators={false}
 					showThumbs={false}

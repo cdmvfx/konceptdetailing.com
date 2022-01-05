@@ -22,7 +22,7 @@ const Testimonials = () => {
 	]
 
 	return (
-		<div id="testimonials" className="px-8 py-16 text-center space-y-16 bg-neutral-900 flex flex-col md:flex-row items-baseline leading-8 md:space-y-0 md:text-2xl md:leading-10 border-white border-b">
+		<div id="testimonials" className="px-8 py-64 text-center space-y-16 bg-neutral-900 flex flex-col md:flex-row items-baseline leading-8 md:space-y-0 md:text-2xl md:leading-10 border-white border-b">
 			{
 				reviews.map(({name, image, text}, index) => (
 					<motion.div 

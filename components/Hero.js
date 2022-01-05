@@ -10,8 +10,8 @@ const Hero = () => {
 	};
 
 	const item = {
-		start: {y: 50, opacity: 0},
-		end: {y: 0, opacity: 1, transition: {type: "tween", ease: "easeOut", duration: 1 }}
+		start: {y: 50, opacity: 0, filter: "blur(10px)"},
+		end: {y: 0, opacity: 1, filter: "blur(0px)", transition: {type: "tween", ease: "easeOut", duration: 1 }}
 	}
 	
   return (
@@ -32,7 +32,7 @@ const Hero = () => {
 			className="flex flex-col items-center justify-center h-screen uppercase"
 			>
         <motion.div variants={item} className="mb-4 font-bold italic text-xl md:text-4xl text-center" style={{fontFamily:"Montserrat"}}>From Koncept to Reality</motion.div>
-        <motion.div variants={item} className="p-4 border cursor-pointer border-solid border-white text-center kd-heading">
+        <motion.div variants={item} className="kd-heading">
 				<PopupButton 
 					url="https://calendly.com/konceptdetailing" 
 				  text="SCHEDULE A DETAIL"
@@ -44,7 +44,7 @@ const Hero = () => {
 						primaryColor: '00a2ff',
 						textColor: '4d5055'
 					}}
-					styles={{letterSpacing: "2px"}}
+					styles={{letterSpacing: "2px", border: "1px solid white", cursor: "pointer", textAlign: "center", padding: "1rem" }}
 				/>
         </motion.div>
       </motion.div>

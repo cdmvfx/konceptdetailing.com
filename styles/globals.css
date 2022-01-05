@@ -24,3 +24,49 @@ a {
 .kd-heading {
 	font-family: "Montserrat";
 }
+
+.kd-panel {
+	backdrop-filter: blur(4px);
+	background-color: #00000060;
+	border: 1px solid #ffffff21;
+}
+
+.grecaptcha-badge { visibility: hidden; }
+
+.kd-about-photo {
+	max-width: 65%;
+	min-width: 55%;
+	position: absolute;
+}
+
+.kd-about-photo-1 {
+	top: calc((100vw * .1));
+	left: calc(100vw * .05);
+}
+.kd-about-photo-2 {
+	top: calc((100vw * .5));
+	right: calc(100vw * .05);
+}
+.kd-about-photo-3 {
+	top: calc((100vw * .9));
+	left: calc(100vw * .05);
+}
+
+.kd-about-photo-1-lg {
+	top: calc((1200px * .5) - (100vw * .28));
+	right: calc(100vw * .05);
+	/* top: 5%;
+	right: 30%;  */
+}
+.kd-about-photo-2-lg {
+	top: calc((1200px * .5) - (100vw * .08));
+	right: calc(100vw * .02);
+	/* top: 30%;
+	right: 5%;  */
+}
+.kd-about-photo-3-lg {
+	top: calc((1200px * .5) + (100vw * .1));
+	right: calc(100vw * .08);
+	/* top: 60%;
+	right: 35%;  */
+}
