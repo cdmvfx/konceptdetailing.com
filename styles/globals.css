@@ -36,7 +36,7 @@ a {
 .kd-about-photo {
 	max-width: 65%;
 	min-width: 55%;
-	position: absolute;
+	position: relative;
 }
 
 .kd-about-photo-1 {
@@ -53,20 +53,14 @@ a {
 }
 
 .kd-about-photo-1-lg {
-	top: calc((1200px * .5) - (100vw * .28));
-	right: calc(100vw * .05);
-	/* top: 5%;
-	right: 30%;  */
+	top: calc(100vw * .01);
+	left: calc(100vw * .10);
 }
 .kd-about-photo-2-lg {
-	top: calc((1200px * .5) - (100vw * .08));
-	right: calc(100vw * .02);
-	/* top: 30%;
-	right: 5%;  */
+	top: calc(100vw * -.01);
+	left: calc(100vw * .15);
 }
 .kd-about-photo-3-lg {
-	top: calc((1200px * .5) + (100vw * .1));
-	right: calc(100vw * .08);
-	/* top: 60%;
-	right: 35%;  */
+	top: calc(100vw * -.04);
+	left: calc(100vw * .06);
 }

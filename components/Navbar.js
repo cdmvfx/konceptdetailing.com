@@ -40,7 +40,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="fixed w-full top-0 left-0 z-50 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff11]">
+    <div className="sticky z-50 w-full top-0 left-0 z-50 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff]">
       <AnimatePresence exitBeforeEnter initial={false}>
         {menu && (
           <motion.div

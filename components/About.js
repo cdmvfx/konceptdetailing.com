@@ -31,7 +31,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="relative w-full h-[1200px] lg:h-[1200px] bg-neutral-900 lg:flex lg:flex-row md:p-16 flex flex-col items-center"
+      className="relative w-full bg-neutral-900 lg:flex lg:flex-row md:p-16 flex flex-col items-center"
     >
       <div className="p-8 space-y-4 md:space-y-8 w-full lg:w-1/2">
         <motion.div
