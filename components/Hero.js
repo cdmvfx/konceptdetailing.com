@@ -23,17 +23,16 @@ const Hero = () => {
   };
 
   return (
-    <div className="h-screen w-full relative border-white border-b" id="hero">
+    <div className="h-screen w-full border-white border-b z-10" id="hero">
       <motion.div
         variants={container}
         initial="start"
         animate="end"
-        className="flex flex-col items-center justify-center h-screen uppercase z-50 relative"
+        className="flex flex-col items-center z-30 justify-center h-screen uppercase relative"
       >
         <motion.div
           variants={item}
-          className="mb-4 font-bold italic text-xl md:text-4xl text-center"
-          style={{ fontFamily: "Montserrat" }}
+          className="mb-4 font-bold italic text-3xl text-center max-w-[13ch] md:max-w-none kd-heading"
         >
           From Koncept to Reality
         </motion.div>
@@ -59,8 +58,8 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-			<div className="w-full h-screen absolute top-0 left-0">
-				<video className="w-full h-screen" autoPlay={true} muted={true}>
+			<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
+				<video className="h-full object-cover object-[25%] absolute" autoPlay={true} muted={true} loop={false}>
 					<source src="https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V1.mp4" type="video/mp4" />
 				</video>
 			</div>

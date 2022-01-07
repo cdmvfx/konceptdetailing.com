@@ -40,14 +40,14 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="sticky z-50 w-full top-0 left-0 z-50 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff]">
+    <div className="fixed z-40 w-full top-0 left-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff]">
       <AnimatePresence exitBeforeEnter initial={false}>
         {menu && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: {ease: "easeInOut"} }}
             exit={{ opacity: 0, transition: {ease: "easeOut"} }}
-            className="w-screen h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 md:hidden"
+            className="w-screen z-30 h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 md:hidden"
           >
             <div className="cursor-pointer" onClick={() => setMenu(false)}>
               X

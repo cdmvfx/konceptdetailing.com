@@ -31,7 +31,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="relative w-full bg-neutral-900 lg:flex lg:flex-row md:p-16 flex flex-col items-center"
+      className="relative w-full lg:flex lg:flex-row md:p-16 flex flex-col items-center"
     >
       <div className="p-8 space-y-4 md:space-y-8 w-full lg:w-1/2">
         <motion.div
@@ -88,7 +88,7 @@ const About = () => {
 			{/* <div>
 				<Image src={collageVertical}/>
 			</div> */}
-			<div className="hidden lg:block h-full relative w-1/2">
+			<div className="block h-full relative w-1/2">
 				<div className="kd-about-photo kd-about-photo-1-lg">
 					<Image src={photo1} alt="Kevin Martinez Marine" />
 				</div>
@@ -96,18 +96,6 @@ const About = () => {
 					<Image src={photo2} alt="Kevin Martinez Squad" />
 				</div>
 				<div className="kd-about-photo kd-about-photo-3-lg">
-					<Image src={photo3} alt="Kevin Martinez Costa Rica" />
-				</div>
-			</div>
-
-			<div className="lg:hidden h-full relative w-full">
-				<div className="kd-about-photo kd-about-photo-1">
-					<Image src={photo1} alt="Kevin Martinez Marine" />
-				</div>
-				<div className="kd-about-photo kd-about-photo-2">
-					<Image src={photo2} alt="Kevin Martinez Squad" />
-				</div>
-				<div className="kd-about-photo kd-about-photo-3">
 					<Image src={photo3} alt="Kevin Martinez Costa Rica" />
 				</div>
 			</div>

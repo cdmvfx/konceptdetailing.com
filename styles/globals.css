@@ -22,7 +22,7 @@ a {
 }
 
 .kd-heading {
-	font-family: "Montserrat";
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 .kd-panel {
@@ -35,21 +35,17 @@ a {
 
 .kd-about-photo {
 	max-width: 65%;
-	min-width: 55%;
+	min-width: 100%;
 	position: relative;
+	margin-left: -20%;
 }
 
-.kd-about-photo-1 {
-	top: calc((100vw * .1));
-	left: calc(100vw * .05);
-}
-.kd-about-photo-2 {
-	top: calc((100vw * .5));
-	right: calc(100vw * .05);
-}
-.kd-about-photo-3 {
-	top: calc((100vw * .9));
-	left: calc(100vw * .05);
+@media only screen and (min-width: 1024px) {
+	.kd-about-photo {
+		margin-left: 0;
+		max-width: 65%;
+		min-width: 55%;
+	}
 }
 
 .kd-about-photo-1-lg {

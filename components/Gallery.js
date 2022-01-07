@@ -13,11 +13,13 @@ const Gallery = () => {
 	const images = importAll(require.context('../public/photos/gallery', false, /\.(png|jpe?g|svg)$/));
 
 	const gallery = images.map((image, index) => (
-		<div className="p-4 flex items-center justify-center h-full" key={`gallery-photo-${index}`}><div><img className="" src={image.default.src} alt=""/></div></div>
+		<div className="p-1 flex items-center justify-center h-full" key={`gallery-photo-${index}`}>
+			<img className="object-fit h-full relative" src={image.default.src} alt=""/>
+		</div>
 	));
 
 	return (
-		<div id="gallery" className="w-full h-auto space-y-4 md:space-y-0 md:py-4 flex flex-col items-center justify-center bg-black border-white border-b">
+		<div id="gallery" className="w-full h-auto space-y-4 py-16 md:space-y-0 flex flex-col items-center justify-center z-10">
 			<div className="w-full block md:hidden">
 				<Carousel
 					showIndicators={false}

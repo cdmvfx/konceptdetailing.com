@@ -80,7 +80,7 @@ const ContactForm = () => {
 
 
   return (
-    <div className="pt-4 w-full space-y-8 text-center md:w-1/3">
+    <div className="pt-4 w-full space-y-8 text-center md:w-2/3 lg:w-1/3">
 			<PopupButton 
 					url="https://calendly.com/konceptdetailing" 
 				  text="SCHEDULE A DETAIL"

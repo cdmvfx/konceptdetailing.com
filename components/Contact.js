@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col space-y-4 md:space-y-8 justify-center items-center p-8 bg-neutral-900 md:p-16"
+      className="flex flex-col space-y-4 md:space-y-8 justify-center items-center p-8 py-16"
     >
       <motion.div 
 			initial={{ opacity: 0 }}

@@ -18,7 +18,7 @@ const FAQ = () => {
 		}
 	];
   return (
-    <div id="faq" className="text-center px-8 py-32 space-y-4 md:space-y-8 w-full bg-neutral-900">
+    <div id="faq" className="text-center px-8 py-16 space-y-4 md:space-y-8 w-full">
       <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{

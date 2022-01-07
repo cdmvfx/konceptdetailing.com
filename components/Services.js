@@ -52,7 +52,7 @@ const Services = () => {
   return (
     <div className="" id="services">
       <div
-				className="flex flex-wrap flex-col w-full h-auto text-center items-center justify-center py-64 px-8 space-y-16 md:flex-row md:items-baseline md:space-y-0 md:space-x-0 bg-neutral-900"
+				className="flex flex-wrap flex-col w-full h-auto text-center items-center justify-center py-16 px-8 space-y-16 md:flex-row md:items-baseline md:space-y-0 md:space-x-0"
 			>
         {services.map(({ label, bullets }, index) => (
           <motion.div
