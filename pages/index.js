@@ -36,7 +36,10 @@ export default function Home() {
         <title>Koncept Detailing - Cars, SUVs, Motorcycles</title>
         <meta name="description" content="Former United States Marine based in Tampa, Florida with over 5 years of experience in auto detailing." />
         <link rel="icon" href="/images/favicon.ico" />
-      </Head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,700&display=swap" rel="stylesheet" />
+			</Head>
 
       <main className='relative overflow-hidden bg-[#111111]'>
 				<div

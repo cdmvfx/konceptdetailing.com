@@ -33,7 +33,11 @@ const Gallery = () => {
 					renderArrowPrev={(prevClicked, hasPrev, prevLabel) => <div className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150" onClick={prevClicked}><MdArrowBackIos /></div>}
 					renderArrowNext={(nextClicked, hasNext, nextLabel) => <div className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150 right-0" onClick={nextClicked}><MdArrowForwardIos /></div>}
 					renderIndicator={(indiClicked, indiSelected, indiIndex, indiLabel) => 
-						<div style={{width: "calc(100% / 42)", height: "1px"}} className={"relative top-[12px] inline-block border-t " + (indiSelected ? "border-t-gray-500" : "")} onClick={indiClicked}></div>
+						<div 
+							style={{width: "calc((100% / 42) - .3rem)", height: "100%"}} 
+							className={"relative bottom-[90%] m-[.1rem] inline-block border-t-2 border-black " + (indiSelected ? "border-t-white" : "")} 
+							onClick={indiClicked}>
+						</div>
 					}
 					statusFormatter={(currentItem, total) => <div className="text-2xl p-4" style={{textShadow: "none"}}>{currentItem} / {total}</div>}
 					centerMode={false}
@@ -60,7 +64,7 @@ const Gallery = () => {
 					renderArrowNext={(nextClicked, hasNext, nextLabel) => <div className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150 right-0" onClick={nextClicked}><MdArrowForwardIos /></div>}
 					renderIndicator={(indiClicked, indiSelected, indiIndex, indiLabel) => 
 						<div 
-							style={{width: "calc(100% / 80)", height: "100%"}} 
+							style={{width: "calc((100% / 42) - .6rem)", height: "100%"}} 
 							className={"relative bottom-[90%] m-1 inline-block border-t-2 border-black " + (indiSelected ? "border-t-white" : "")} 
 							onClick={indiClicked}>
 						</div>

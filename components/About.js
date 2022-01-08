@@ -75,7 +75,9 @@ const About = () => {
 					style={{
 						backgroundImage: "url(../images/image-ph.svg)", 
 						backgroundSize: "100% auto",
-						backgroundRepeat: "no-repeat"
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center center",
+						border: "1px solid white"
 					}}
 				>
 					<motion.div
@@ -99,7 +101,9 @@ const About = () => {
 					style={{
 						backgroundImage: "url(../images/image-ph.svg)", 
 						backgroundSize: "100% auto",
-						backgroundRepeat: "no-repeat"
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center center",
+						border: "1px solid white"
 					}}
 				>
 					<motion.div
@@ -123,8 +127,11 @@ const About = () => {
 					style={{
 						backgroundImage: "url(../images/image-ph.svg)", 
 						backgroundSize: "100% auto",
-						backgroundRepeat: "no-repeat"
-					}}>
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center center",
+						border: "1px solid white"
+					}}
+				>
 						<motion.div
 						className=""
 						initial={{opacity: 0}}
