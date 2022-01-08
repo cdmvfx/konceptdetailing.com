@@ -1,5 +1,4 @@
-import { Link, animateScroll } from "react-scroll";
-import { PopupWidget, PopupButton } from "react-calendly";
+import { PopupButton } from "react-calendly";
 import { motion } from "framer-motion";
 import {useState, useEffect} from 'react';
 
@@ -77,17 +76,19 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-			{width !== 0 && <div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
-				<video className="w-full h-full object-cover object-[25%] absolute z-10" autoPlay={true} muted={true} loop={false}>
+			{width !== 0 && 
+				<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
+				<video className="w-full h-full object-cover absolute z-10" playsInline autoPlay={true} muted={true} loop={false}>
 					<source 
 						src={
 							parseInt(width) > 1024 
 							? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4" 
-							: "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical.mp4"} 
+							: "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical+2.mp4"} 
 						type="video/mp4" 
 					/>
 				</video>
-			</div>}
+				</div>
+			}
     </div>
   );
 };
