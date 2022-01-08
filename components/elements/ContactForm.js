@@ -94,7 +94,7 @@ const ContactForm = () => {
 					}}
 					styles={{letterSpacing: "2px", border: "1px solid white", cursor: "pointer", textAlign: "center", padding: "1rem" }}
 				/>
-      <div className="md:text-2xl md:leading-10 space-y-4">
+      <div className="md:text-2xl md:leading-10 space-y-4 leading-8">
         <div className="space-y-4">
           <p>If you would like to schedule a date and time that works best for you, please click the button above to see my availability!</p>
 					<p>If you have any questions, feel free to call, text or email me, or fill out the form below and I'll reach back out to you as soon as possible!</p>
@@ -169,7 +169,7 @@ const ContactForm = () => {
           onClick={submitform}
         >
           {status ? (
-            <div className="flex flex-col justify-center items-center text-green-400">
+            <div className="flex flex-col justify-center items-center text-green-400 ">
               <FaCheck /> Submitted! I'll get back to you as soon as possible!
             </div>
           ) : (

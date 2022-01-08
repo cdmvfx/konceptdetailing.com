@@ -8,7 +8,7 @@ const Hero = () => {
 	const [width, setWidth] = useState(0);
 
 	function handleResize() {
-		setWidth(window.innerWidth)
+		setWidth(window.innerWidth);
 	}
   
   useEffect(() => {
@@ -77,11 +77,17 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-			<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
+			{width !== 0 && <div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
 				<video className="w-full h-full object-cover object-[25%] absolute z-10" autoPlay={true} muted={true} loop={false}>
-					<source src={width > 1024 ? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4" : "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical.mp4"} type="video/mp4" />
+					<source 
+						src={
+							parseInt(width) > 1024 
+							? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4" 
+							: "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical.mp4"} 
+						type="video/mp4" 
+					/>
 				</video>
-			</div>
+			</div>}
     </div>
   );
 };

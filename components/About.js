@@ -115,7 +115,7 @@ const About = () => {
 								duration: 1, 
 								type: "tween", 
 								ease: "easeOut",
-								delay: .3
+								delay: 0
 							}
 						}}
 						viewport={{amount: 1, once: true}}
@@ -141,7 +141,7 @@ const About = () => {
 								duration: 1, 
 								type: "tween", 
 								ease: "easeOut",
-								delay: .6
+								delay: 0
 							}
 						}}
 						viewport={{amount: 1, once: true}}

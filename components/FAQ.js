@@ -6,15 +6,23 @@ const FAQ = () => {
 	const faq = [
 		{
 			q: "Where are you located?",
-			a: "I am based in Tampa, and will drive up to 20 miles to detail your vehicle."
+			a: "I am based in Tampa, and will drive to you anywhere in the Tampa area to detail your vehicle."
 		},
 		{
 			q: "I'm not in Tampa. Can you drive to me?",
-			a: "Yes, but I will charge you for an additional $10 per 10 miles to cover the gas and time expenses."
+			a: "Yes, but I will charge you for an additional $10 per 10 miles to cover the gas and time expenses, up to 70 miles."
+		},
+		{
+			q: "Where will you detail my car?",
+			a: "If you live in a house, I can detail it right in your driveway. Otherwise, I do free pickup and delivery from your residence."
 		},
 		{
 			q: "How much do you charge?",
-			a: "Every detail is different depending on the size of the vehicle, level of dirtiness, and tier of detailing you'd like. To get an accurate quote, please contact me with details!"
+			a: "Every detail is different depending on the services you need. Please click the \"Schedule A Detail\" button below to view packages and check availability!"
+		},
+		{
+			q: "There are things in your packages I need or don't need. Can you add or remove something?",
+			a: "Yes, my packages are flexible! Please contact me to confirm switching out specific services."
 		}
 	];
   return (

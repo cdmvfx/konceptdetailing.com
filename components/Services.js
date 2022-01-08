@@ -7,11 +7,17 @@ const Services = () => {
     {
       label: "Interior",
       bullets: [
+        "Full Sanitation",
         "Thorough Vacuum",
-        "Steam Cleaning",
-        "Stain Removal",
+        "Leather / Cloth Cleaning and Protectant",
+        "Windows Cleaned",
+        "Fully Dressed with UVA/UVB Protection",
+        "Light Carpet Shampoo",
+        "Stain Removal / Deodorizing",
         "Pet Hair Removal",
         "Trunk and Cargo Area",
+        "Meticulous Brush Cleaning",
+				"Cabin Filter",
         "Dash, Console, Cup Holders, and Storage",
         "Instrument Panel, Gauges, Buttons, Knobs, and Vents",
       ],
@@ -19,15 +25,17 @@ const Services = () => {
     {
       label: "Exterior",
       bullets: [
-        "Gentle Car Wash",
-        "Liquid Carnauba / Wax",
-        "Hand Drying",
+        "Gentle Hand Wash",
+        "Gentle Hand Dry",
+        "Light Wax",
         "Exterior Trim Conditioning",
+				"Plastics Coating",
         "Bug and Tar Removal",
         "Tires, Wheels, and Wheel Wells",
         "Wheels and Chrome Polished and Protected",
         "Gas Compartment Cleaned",
         "Exhaust Tips Cleaned and Polished",
+				"Rain X Application"
       ],
     },
   ];

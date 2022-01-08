@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 	const details = req.body.details;
 
   const from = "18886030010";
-  const to = "18134516954";
+  const to = "18136794397";
   const text = `
 		New Contact Submission
 		Name: ${name}
