@@ -3,31 +3,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import photo1 from "../public/photos/marine-1.jpg";
 import photo2 from "../public/photos/marines-section.jpg";
-import photo3 from "../public/photos/kevin-cr.jpg";
+import photo3 from "../public/photos/kevin-cr-sm.jpg";
 import collageVertical from '../public/photos/about-collage-vertical.png'
 import SectionHeader from "./elements/SectionHeader";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import placeholder from '../public/images/image-ph.svg'
 
 const About = () => {
-  const aboutPhotos = [
-    <div
-      className="p-4 flex items-center justify-center w-full h-full"
-      key="about-photo-1"
-    >
-      <div>
-        <Image src={photo1} key="about-photo-1" alt="My first time deployed." />
-      </div>
-    </div>,
-    <div
-      className="p-4 flex items-center justify-center w-full h-full"
-      key="about-photo-2"
-    >
-      <div>
-        <Image src={photo2} key="about-photo-2" alt="Platoon" />
-      </div>
-    </div>,
-  ];
-
+	
   return (
     <div
       id="about"
@@ -79,39 +62,87 @@ const About = () => {
             detailing.
           </p>
           <p>
-            The years in the Marine Corps were the most difficult of my life.
-            After 8 years, I left the Marine Corps to pursue my passion: auto
-            detailing.
+            This is filler text so I can see how a long paragraph looks. Kevin you'll change this later.
           </p>
         </motion.div>
       </div>
 			{/* <div>
 				<Image src={collageVertical}/>
 			</div> */}
-			<div className="block h-full relative w-1/2">
-				<div className="kd-about-photo kd-about-photo-1-lg">
-					<Image src={photo1} alt="Kevin Martinez Marine" />
+			<div className="block h-full relative w-3/4 lg:1/2 z-10">
+				<div 
+					className="kd-about-photo kd-about-photo-1-lg" 
+					style={{
+						backgroundImage: "url(../images/image-ph.svg)", 
+						backgroundSize: "100% auto",
+						backgroundRepeat: "no-repeat"
+					}}
+				>
+					<motion.div
+						className=""
+						initial={{opacity: 0}}
+						whileInView={{
+							opacity: [0, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 0, 0.1, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 1 ], 
+							transition: {
+								duration: 1, 
+								type: "tween", 
+								ease: "easeOut"
+							}
+						}}
+						viewport={{amount: 1, once: true}}
+					>
+						<img src="../photos/marine-1.jpg" alt="Kevin Martinez Marine" />
+					</motion.div>
 				</div>
-				<div className="kd-about-photo kd-about-photo-2-lg">
-					<Image src={photo2} alt="Kevin Martinez Squad" />
+				<div 
+					className="kd-about-photo kd-about-photo-2-lg" 
+					style={{
+						backgroundImage: "url(../images/image-ph.svg)", 
+						backgroundSize: "100% auto",
+						backgroundRepeat: "no-repeat"
+					}}
+				>
+					<motion.div
+						className=""
+						initial={{opacity: 0}}
+						whileInView={{
+							opacity: [0, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 0, 0.1, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 1 ], 
+							transition: {
+								duration: 1, 
+								type: "tween", 
+								ease: "easeOut",
+								delay: .3
+							}
+						}}
+						viewport={{amount: 1, once: true}}
+					>
+						<img src="../photos/marines-section.jpg" alt="Kevin Martinez Squad" />
+					</motion.div>
 				</div>
-				<div className="kd-about-photo kd-about-photo-3-lg">
-					<Image src={photo3} alt="Kevin Martinez Costa Rica" />
+				<div className="kd-about-photo kd-about-photo-3-lg"
+					style={{
+						backgroundImage: "url(../images/image-ph.svg)", 
+						backgroundSize: "100% auto",
+						backgroundRepeat: "no-repeat"
+					}}>
+						<motion.div
+						className=""
+						initial={{opacity: 0}}
+						whileInView={{
+							opacity: [0, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 0, 0.1, .3, 0, 0.4, 0.1, .4, 0, .1, .3, .6, 1 ], 
+							transition: {
+								duration: 1, 
+								type: "tween", 
+								ease: "easeOut",
+								delay: .6
+							}
+						}}
+						viewport={{amount: 1, once: true}}
+					>
+						<img src="../photos/kevin-cr-sm.jpg" alt="Kevin Martinez Costa Rica" />
+					</motion.div>
 				</div>
 			</div>
-      <div className="hidden flex justify-center  w-full md:hidden">
-        <Carousel
-          showIndicators={false}
-          showThumbs={false}
-          swipeable={true}
-          autoPlay={true}
-          interval={3000}
-          emulateTouch={true}
-          dynamicHeight={false}
-        >
-          {aboutPhotos}
-        </Carousel>
-      </div>
     </div>
   );
 };

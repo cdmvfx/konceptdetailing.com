@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 html,
 body {
   padding: 0;
@@ -37,7 +39,7 @@ a {
 	max-width: 65%;
 	min-width: 100%;
 	position: relative;
-	margin-left: -20%;
+	margin-left: -15%;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -59,4 +61,9 @@ a {
 .kd-about-photo-3-lg {
 	top: calc(100vw * -.04);
 	left: calc(100vw * .06);
+}
+
+.carousel .control-dots {
+	bottom: initial !important;
+	top: 0;
 }

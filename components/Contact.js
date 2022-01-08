@@ -22,7 +22,7 @@ const Contact = () => {
 				opacity: 1,
 				transition: { type: "tween", duration: 1, ease: "easeOut" },
 			}}
-			viewport={{ amount: "500px", once: true }}
+			viewport={{ amount: 1, once: true }}
 			className="uppercase text-xl tracking-widest md:text-4xl">
         Contact
       </motion.div>
@@ -33,11 +33,11 @@ const Contact = () => {
 						width: "200px",
 						transition: { type: "tween", duration: 1, ease: "easeOut" },
 					}}
-					viewport={{ amount: "200px", once: true }}
+					viewport={{ amount: 1, once: true }}
 					className="m-auto w-32 md:w-64" />
       </div>
       <GoogleReCaptchaProvider reCaptchaKey="6LfkvOcdAAAAAA9bdAgSLgmyCfr0N8uej7Ia4WMQ">
-					<ContactForm />
+				<ContactForm />
 			</GoogleReCaptchaProvider>
     </div>
   );

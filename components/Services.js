@@ -1,5 +1,5 @@
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 
 const Services = () => {
@@ -49,10 +49,13 @@ const Services = () => {
 		show: { opacity: 1, y: 0, transition: { duration: 1, type: "tween", ease: "easeOut" } }
 	}
 
+	const scrollRef = useRef(null);
+
+
   return (
-    <div className="" id="services">
+    <div className="" id="services" ref={scrollRef}>
       <div
-				className="flex flex-wrap flex-col w-full h-auto text-center items-center justify-center py-16 px-8 space-y-16 md:flex-row md:items-baseline md:space-y-0 md:space-x-0"
+				className="flex flex-wrap flex-col w-full h-auto text-center items-center justify-center mt-0 lg:mt-16 py-16 px-8 space-y-16 md:flex-row md:items-baseline md:space-y-0 md:space-x-0"
 			>
         {services.map(({ label, bullets }, index) => (
           <motion.div
@@ -80,7 +83,7 @@ const Services = () => {
 								variants={container}
 								initial="hidden"
 								whileInView="show"
-								viewport={{amount: "200px", once: true}}
+								viewport={{amount: "500px", once: true}}
 							>
                 {bullets.map((bullet, index) => (
                   <motion.li 

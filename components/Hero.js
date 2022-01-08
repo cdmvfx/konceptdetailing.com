@@ -59,7 +59,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 			<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
-				<video className="h-full object-cover object-[25%] absolute" autoPlay={true} muted={true} loop={false}>
+				<video className="w-full h-full object-cover object-[25%] absolute z-10" autoPlay={true} muted={true} loop={false}>
 					<source src="https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V1.mp4" type="video/mp4" />
 				</video>
 			</div>
