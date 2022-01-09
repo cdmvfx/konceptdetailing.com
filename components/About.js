@@ -61,9 +61,6 @@ const About = () => {
             After 8 years, I left the Marine Corps to pursue my passion: auto
             detailing.
           </p>
-          <p>
-            This is filler text so I can see how a long paragraph looks. Kevin you'll change this later.
-          </p>
         </motion.div>
       </div>
 			{/* <div>
