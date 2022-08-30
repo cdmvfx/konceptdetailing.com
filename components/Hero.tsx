@@ -81,7 +81,7 @@ const Hero = () => {
 				<video className="w-full h-full object-cover absolute z-10" playsInline autoPlay={true} muted={true} loop={false}>
 					<source 
 						src={
-							parseInt(width) > 1024 
+							width > 1024 
 							? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4" 
 							: "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical+3.mp4"} 
 						type="video/mp4"  
