@@ -1,12 +1,12 @@
+import { NextApiHandler } from "next";
 import clientPromise from "../../lib/mongodb";
-
-const Vonage = require("@vonage/server-sdk");
+import Vonage from '@vonage/server-sdk'
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default async function handler(req, res) {
+const handler: NextApiHandler = async (req, res) => {
 
-	const verify = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=6LfkvOcdAAAAANdtKBRYTDt3Qef-Uawsxz3b7rrj&response=${req.body.token}`, {
+	const verify = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET}&response=${req.body.token}`, {
 				method: "POST"
 			})
 				.then((res) => {
@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 	}
 
   const vonage = new Vonage({
-    apiKey: "a51fac8b",
-    apiSecret: "cFOb5fhJnL1gMCXz",
+    apiKey: process.env.VONAGE_API_KEY as string,
+    apiSecret: process.env.VONAGE_API_SECRET as string,
   });
 
 	const name = req.body.name;
@@ -34,8 +34,8 @@ export default async function handler(req, res) {
 	const phone = req.body.phone;
 	const details = req.body.details;
 
-  const from = "18886030010";
-  const to = "18136794397";
+  const from = process.env.VONAGE_PHONE_FROM as string;
+  const to = process.env.VONAGE_PHONE_TO as string;
   const text = `
 		New Contact Submission
 		Name: ${name}
@@ -44,7 +44,7 @@ export default async function handler(req, res) {
 		Details: ${details}
 		`;
 
-  vonage.message.sendSms(from, to, text, (err, responseData) => {
+  vonage.message.sendSms(from, to, text, {}, (err, responseData) => {
     if (err) {
       console.log(err);
     } else {
@@ -70,3 +70,5 @@ export default async function handler(req, res) {
 
   res.status(200).json({ status: "success" });
 }
+
+export default handler;

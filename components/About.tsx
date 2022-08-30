@@ -1,13 +1,5 @@
-import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import photo1 from "../public/photos/marine-1.jpg";
-import photo2 from "../public/photos/marines-section.jpg";
-import photo3 from "../public/photos/kevin-cr-sm.jpg";
-import collageVertical from '../public/photos/about-collage-vertical.png'
-import SectionHeader from "./elements/SectionHeader";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import placeholder from '../public/images/image-ph.svg'
 
 const About = () => {
 	

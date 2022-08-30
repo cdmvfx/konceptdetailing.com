@@ -1,4 +1,8 @@
-const SectionHeader = (props) => {
+type SectionHeaderProps = {
+	heading: string
+}
+
+const SectionHeader = (props: SectionHeaderProps) => {
 
 	const {heading} = props;
 
