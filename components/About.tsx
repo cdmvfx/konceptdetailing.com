@@ -16,7 +16,7 @@ const About = () => {
 						x: 0,
             transition: { type: "tween", duration: 1, ease: "easeOut" },
           }}
-          viewport={{ amount: "500px", once: true }}
+          viewport={{ amount: "500px" as any, once: true }}
           className="uppercase text-xl tracking-widest md:text-left md:text-4xl"
         >
           FROM MACHINE GUNNER TO DETAILER
@@ -28,7 +28,7 @@ const About = () => {
               width: "200px",
               transition: { type: "tween", duration: 1, ease: "easeOut" },
             }}
-            viewport={{ amount: "200px", once: true }}
+            viewport={{ amount: "200px" as any, once: true }}
             className="w-32 md:m-0 md:w-full"
           />
         </div>
@@ -39,7 +39,7 @@ const About = () => {
             y: 0,
             transition: { type: "tween", ease: "easeOut", duration: 1 },
           }}
-          viewport={{ once: true, amount: "200px" }}
+          viewport={{ once: true, amount: "200px" as any }}
           className="text-left space-y-4  leading-8 md:text-xl md:leading-10"
         >
           <p className="">
