@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   const [status, setStatus] = useState(false);
 
-  const changeInputs = (key, val) => {
+  const changeInputs = (key: "name" | "email" | "phone" | "details", val: string) => {
     let newInputs = { ...inputs };
     newInputs[key] = val;
     setInputs(newInputs);
@@ -35,7 +35,7 @@ const ContactForm = () => {
 
 		setStatus(true);
 
-		let formdata = {...inputs};
+		let formdata: any = {...inputs};
 
 		formdata.token = token;
 
@@ -152,7 +152,6 @@ const ContactForm = () => {
         <label htmlFor="name">Additional Details</label>
         <textarea
           className="w-full h-10 text-black font-bold p-2"
-          type="text"
           autoComplete="details"
           id="details"
           required

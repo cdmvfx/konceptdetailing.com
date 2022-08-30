@@ -33,7 +33,7 @@ const FAQ = () => {
             opacity: 1,
             transition: { type: "tween", duration: 1, ease: "easeOut" },
           }}
-          viewport={{ amount: "500px", once: true }}
+          viewport={{ amount: "500px" as any, once: true }}
 					className="uppercase text-xl tracking-widest md:text-4xl">FAQ</motion.div>
       <div>
         <motion.hr 
@@ -42,7 +42,7 @@ const FAQ = () => {
 					width: "200px",
 					transition: { type: "tween", duration: 1, ease: "easeOut" },
 				}}
-				viewport={{ amount: "200px", once: true }}
+				viewport={{ amount: "200px" as any, once: true }}
 				className="m-auto w-32 md:w-64" />
       </div>
 			<div className="space-y-8 leading-8 md:text-2xl md:leading-10 md:max-w-2xl md:m-auto">

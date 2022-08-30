@@ -5,9 +5,8 @@ import {MdArrowForwardIos, MdArrowBackIos} from 'react-icons/md'
 
 const Gallery = () => {
 
-	function importAll(r) {
-		let images = [];
-		r.keys().map((item, index) => { images[index] = r(item); });
+	function importAll(r: __WebpackModuleApi.RequireContext) {
+		const images = r.keys().map((item: string, index: number) =>  r(item) );
 		return images;
 	}
 	
@@ -39,7 +38,7 @@ const Gallery = () => {
 							onClick={indiClicked}>
 						</div>
 					}
-					statusFormatter={(currentItem, total) => <div className="text-2xl p-4" style={{textShadow: "none"}}>{currentItem} / {total}</div>}
+					statusFormatter={(currentItem, total) => <div className="text-2xl p-4" style={{textShadow: "none"}}>{currentItem} / {total}</div> as any}
 					centerMode={false}
 					showStatus={false}
 					infiniteLoop={true}
@@ -69,8 +68,7 @@ const Gallery = () => {
 							onClick={indiClicked}>
 						</div>
 					}
-					statusFormatter={(currentItem, total) => <div className="text-2xl p-4" style={{textShadow: "none"}}>{currentItem} / {total}</div>}
-
+					statusFormatter={(currentItem, total) => <div className="text-2xl p-4" style={{textShadow: "none"}}>{currentItem} / {total}</div> as any}
 				>
 					{gallery}
 				</Carousel>

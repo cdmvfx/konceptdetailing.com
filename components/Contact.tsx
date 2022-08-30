@@ -1,11 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
-import SectionHeader from "./elements/SectionHeader";
-import { FaCheck } from "react-icons/fa";
-import { MdEmail, MdPhone } from "react-icons/md";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import {
   GoogleReCaptchaProvider,
-  useGoogleReCaptcha
 } from 'react-google-recaptcha-v3';
 import ContactForm from "./elements/ContactForm";
 
