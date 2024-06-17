@@ -1,32 +1,34 @@
 import { PopupButton } from "react-calendly";
 import { motion } from "framer-motion";
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [width, setWidth] = useState(0);
 
-	const [width, setWidth] = useState(0);
+  function handleResize() {
+    setWidth(window.innerWidth);
+  }
 
-	function handleResize() {
-		setWidth(window.innerWidth);
-	}
-  
   useEffect(() => {
-    
-    window.addEventListener("resize", handleResize)
-    
+    window.addEventListener("resize", handleResize);
+
     handleResize();
-    
-    return () => { 
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const container = {
     start: { y: 50, opacity: 0 },
     end: {
       y: 0,
       opacity: 1,
-      transition: { type: "tween", staggerChildren: 0.2, delayChildren: 22 },
+      transition: {
+        type: "tween",
+        staggerChildren: 0.2,
+        delayChildren: 22,
+      },
     },
   };
 
@@ -41,21 +43,24 @@ const Hero = () => {
   };
 
   return (
-    <div className="h-screen w-full border-white border-b z-10" id="hero">
+    <div
+      className="h-screen w-full border-white border-b z-10"
+      id="hero">
       <motion.div
         variants={container}
         initial="start"
         animate="end"
-        className="flex flex-col items-center z-30 justify-center h-screen uppercase relative"
-      >
+        className="flex flex-col items-center z-30 justify-center h-screen uppercase relative">
         <motion.div
           variants={item}
-          className="mb-4 font-bold italic text-3xl text-center max-w-[13ch] md:max-w-none kd-heading"
-        >
+          className="mb-4 font-bold italic text-3xl text-center max-w-[13ch] md:max-w-none kd-heading">
           From Koncept to Reality
         </motion.div>
         <motion.div variants={item} className="kd-heading">
           <PopupButton
+            rootElement={
+              document.getElementById("__next") as HTMLElement
+            }
             url="https://calendly.com/konceptdetailing"
             text="SCHEDULE A DETAIL"
             pageSettings={{
@@ -76,19 +81,25 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-			{width !== 0 && 
-				<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
-				<video className="w-full h-full object-cover absolute z-10" playsInline autoPlay={true} muted={true} loop={false}>
-					<source 
-						src={
-							width > 1024 
-							? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4" 
-							: "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical+3.mp4"} 
-						type="video/mp4"  
-					/>
-				</video>
-				</div>
-			}
+      {width !== 0 && (
+        <div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
+          <video
+            className="w-full h-full object-cover absolute z-10"
+            playsInline
+            autoPlay={true}
+            muted={true}
+            loop={false}>
+            <source
+              src={
+                width > 1024
+                  ? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4"
+                  : "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical+3.mp4"
+              }
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      )}
     </div>
   );
 };

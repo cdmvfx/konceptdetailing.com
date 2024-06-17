@@ -1,10 +1,8 @@
 import { FaStar } from "react-icons/fa";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
@@ -51,65 +49,75 @@ const Testimonials = () => {
     },
   ];
 
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		arrows: true,
-		centerMode: true,
-		responsive: [
-			{
-				breakpoint: 2000,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					arrows: true,
-					centerMode: true
-				}
-			},
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 2,
-					arrows: true,
-					slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					arrows: true,
-					slidesToScroll: 1
-				}
-			}
-		]
-	};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          arrows: true,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows: true,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <div
-      id="testimonials"
-      className="w-full py-16"
-    >
-			<Slider {...settings}>
-			{
-				reviews.map(({name, image, text}, index) => (
-					<motion.div 
-						initial={{opacity: 0, y: "200px"}}
-						whileInView={{opacity: 1, y: 0, transition: {type: "tween", duration: 1, ease: "easeOut"}}}
-						viewport={{amount: "200px", once: true}}
-						className='space-y-2 flex-1 p-4 text-center kd-heading md:text-2xl md:leading-10 ' 
-						key={"testimonial-"+index}
-					>
-						<div className='uppercase text-xl tracking-widest'>{name}</div>
-						<div className='flex justify-center text-yellow-600'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-						<div className=''>{text}</div>
-					</motion.div>
-				))
-			}
-			</Slider>
+    <div id="testimonials" className="w-full py-16">
+      <Slider {...settings}>
+        {reviews.map(({ name, image, text }, index) => (
+          <motion.div
+            initial={{ opacity: 0, y: "200px" }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: "tween",
+                duration: 1,
+                ease: "easeOut",
+              },
+            }}
+            viewport={{ amount: 200, once: true }}
+            className="space-y-2 flex-1 p-4 text-center kd-heading md:text-2xl md:leading-10 "
+            key={"testimonial-" + index}>
+            <div className="uppercase text-xl tracking-widest">
+              {name}
+            </div>
+            <div className="flex justify-center text-yellow-600">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </div>
+            <div className="">{text}</div>
+          </motion.div>
+        ))}
+      </Slider>
     </div>
   );
 };

@@ -74,6 +74,7 @@ const ContactForm = () => {
   return (
     <div className="pt-4 w-full space-y-8 text-center md:w-2/3 xl:w-1/3">
       <PopupButton
+        rootElement={document.getElementById("__next") as HTMLElement}
         url="https://calendly.com/konceptdetailing"
         text="SCHEDULE A DETAIL"
         pageSettings={{

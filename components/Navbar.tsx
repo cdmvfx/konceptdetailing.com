@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { RiMenuFill } from "react-icons/ri";
-import { Link, animateScroll } from "react-scroll";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { Link } from "react-scroll";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const navLinksStart = [
@@ -41,22 +41,25 @@ const Navbar = () => {
 
   return (
     <div className="fixed z-40 w-full top-0 left-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff]">
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence mode="wait" initial={false}>
         {menu && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: {ease: "easeInOut"} }}
-            exit={{ opacity: 0, transition: {ease: "easeOut"} }}
-            className="w-screen z-30 h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 md:hidden"
-          >
-            <div className="cursor-pointer" onClick={() => setMenu(false)}>
+            animate={{
+              opacity: 1,
+              transition: { ease: "easeInOut" },
+            }}
+            exit={{ opacity: 0, transition: { ease: "easeOut" } }}
+            className="w-screen z-30 h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-10 md:hidden">
+            <div
+              className="cursor-pointer"
+              onClick={() => setMenu(false)}>
               X
             </div>
             {navLinksFull.map(({ label, value }, index) => (
               <div
                 key={`nav-mobile-item-start-${index}`}
-                className="cursor-pointer"
-              >
+                className="cursor-pointer">
                 <Link
                   activeClass="active"
                   to={value}
@@ -64,8 +67,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-150}
                   duration={500}
-                  onClick={() => setMenu(false)}
-                >
+                  onClick={() => setMenu(false)}>
                   {label}
                 </Link>
               </div>
@@ -77,16 +79,14 @@ const Navbar = () => {
         {navLinksStart.map(({ label, value }, index) => (
           <div
             key={`nav-item-start-${index}`}
-            className="hidden md:block uppercase tracking-widest text-xs cursor-pointer"
-          >
+            className="hidden md:block uppercase tracking-widest text-xs cursor-pointer">
             <Link
               activeClass="active"
               to={value}
               spy={false}
               smooth={true}
               offset={-70}
-              duration={500}
-            >
+              duration={500}>
               {label}
             </Link>
           </div>
@@ -98,8 +98,7 @@ const Navbar = () => {
             spy={false}
             smooth={true}
             offset={-70}
-            duration={500}
-          >
+            duration={500}>
             <Image
               alt="Koncept Detailing"
               src="/images/logo.svg"
@@ -110,23 +109,20 @@ const Navbar = () => {
         </div>
         <div
           className="md:hidden uppercase tracking-widest text-xl cursor-pointer"
-          onClick={() => setMenu(true)}
-        >
+          onClick={() => setMenu(true)}>
           <RiMenuFill />
         </div>
         {navLinksEnd.map(({ label, value }, index) => (
           <div
             key={`nav-item-end-${index}`}
-            className="hidden md:block uppercase tracking-widest text-xs cursor-pointer"
-          >
+            className="hidden md:block uppercase tracking-widest text-xs cursor-pointer">
             <Link
               activeClass="active"
               to={value}
               spy={false}
               smooth={true}
               offset={-70}
-              duration={500}
-            >
+              duration={500}>
               {label}
             </Link>
           </div>
