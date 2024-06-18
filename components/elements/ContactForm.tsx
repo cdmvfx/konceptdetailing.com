@@ -143,7 +143,7 @@ const ContactForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="name">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold"
           type="text"
@@ -155,7 +155,7 @@ const ContactForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="name">Phone Number</label>
+        <label htmlFor="phone">Phone Number</label>
         <input
           className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold"
           type="number"
@@ -167,7 +167,7 @@ const ContactForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="name">Additional Details</label>
+        <label htmlFor="details">Additional Details</label>
         <textarea
           className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold p-2"
           autoComplete="details"

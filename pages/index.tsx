@@ -10,12 +10,15 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ListBlobResultBlob, list } from "@vercel/blob";
+import { useViewportWidth } from "../hooks/use-viewport-width";
 
 export default function Home({
   galleryPhotos,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.scrollY);
+
+  const width = useViewportWidth();
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -40,6 +43,25 @@ export default function Home({
           content="Former United States Marine based in Tampa, Florida with over 8 years of experience in auto detailing."
         />
         <link rel="icon" href="/images/favicon.ico" />
+        <link
+          rel="preload"
+          as="image"
+          href={
+            width > 1024
+              ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.webp"
+              : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.webp"
+          }
+        />
+        <link
+          rel="preload"
+          as="video"
+          href={
+            width > 1024
+              ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Horizontal-ZRTfFqTNAWysu13e1sJbBbhovsq3xw.mp4"
+              : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Vertical%203-E7y5ZZhKVBzAPcVeLuErr03Jp6xBcv.mp4"
+          }
+          type="video/mp4"
+        />
       </Head>
 
       <main className="relative overflow-hidden bg-[#111111]">

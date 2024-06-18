@@ -1,25 +1,12 @@
 import { PopupButton } from "react-calendly";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import { useViewportWidth } from "../hooks/use-viewport-width";
 
 const Hero = () => {
-  const [width, setWidth] = useState(0);
-
   const rootRef = useRef<HTMLDivElement>(null);
 
-  function handleResize() {
-    setWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const width = useViewportWidth();
 
   const container = {
     start: { y: 50, opacity: 0 },
@@ -87,6 +74,12 @@ const Hero = () => {
         <div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
           <video
             className="w-full h-full object-cover absolute z-10"
+            poster={
+              width > 1024
+                ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.webp"
+                : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.webp"
+            }
+            preload="auto"
             playsInline
             autoPlay={true}
             muted={true}
