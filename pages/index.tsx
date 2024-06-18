@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { ListBlobResultBlob, list } from "@vercel/blob";
+import { list } from "@vercel/blob";
 import { useViewportWidth } from "../hooks/use-viewport-width";
 
 export default function Home({
@@ -47,7 +47,7 @@ export default function Home({
           rel="preload"
           as="image"
           href={
-            width > 1024
+            width && width > 1024
               ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.webp"
               : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.webp"
           }
@@ -56,9 +56,9 @@ export default function Home({
           rel="preload"
           as="video"
           href={
-            width > 1024
-              ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Horizontal-ZRTfFqTNAWysu13e1sJbBbhovsq3xw.mp4"
-              : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Vertical%203-E7y5ZZhKVBzAPcVeLuErr03Jp6xBcv.mp4"
+            width && width > 1024
+              ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.mp4"
+              : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.mp4"
           }
           type="video/mp4"
         />

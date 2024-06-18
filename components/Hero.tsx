@@ -70,7 +70,7 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-      {width !== 0 && (
+      {width && (
         <div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
           <video
             className="w-full h-full object-cover absolute z-10"
@@ -87,8 +87,8 @@ const Hero = () => {
             <source
               src={
                 width > 1024
-                  ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Horizontal-ZRTfFqTNAWysu13e1sJbBbhovsq3xw.mp4"
-                  : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Vertical%203-E7y5ZZhKVBzAPcVeLuErr03Jp6xBcv.mp4"
+                  ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.mp4"
+                  : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.mp4"
               }
               type="video/mp4"
             />
