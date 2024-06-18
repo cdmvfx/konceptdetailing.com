@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { useRef } from "react";
 
 const Services = () => {
@@ -39,7 +39,7 @@ const Services = () => {
     },
   ];
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -50,8 +50,8 @@ const Services = () => {
     },
   };
 
-  const item = {
-    hidden: { opacity: 0, y: "100px" },
+  const item: Variants = {
+    hidden: { opacity: 0, y: 100 },
     show: {
       opacity: 1,
       y: 0,
@@ -78,7 +78,7 @@ const Services = () => {
                   ease: "easeOut",
                 },
               }}
-              viewport={{ amount: 500, once: true }}
+              viewport={{ once: true }}
               className="uppercase text-xl tracking-widest md:text-4xl">
               {label}
             </motion.div>
@@ -86,14 +86,14 @@ const Services = () => {
               <motion.hr
                 initial={{ width: 0 }}
                 whileInView={{
-                  width: "200px",
+                  width: 200,
                   transition: {
                     type: "tween",
                     duration: 1,
                     ease: "easeOut",
                   },
                 }}
-                viewport={{ amount: 500, once: true }}
+                viewport={{ once: true }}
                 className="m-auto w-32 md:w-64"
               />
             </div>
@@ -102,7 +102,7 @@ const Services = () => {
                 variants={container}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ amount: 500, once: true }}>
+                viewport={{ once: true }}>
                 {bullets.map((bullet, index) => (
                   <motion.li
                     variants={item}

@@ -75,7 +75,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="flex flex-wrap justify-between md:justify-center items-center md:space-x-8 lg:space-x-12 px-8 md:-ml-[82px]">
+      <div className="flex flex-wrap justify-between md:justify-center items-center md:space-x-8 lg:space-x-12 py-4 px-8 md:-ml-[82px]">
         {navLinksStart.map(({ label, value }, index) => (
           <div
             key={`nav-item-start-${index}`}

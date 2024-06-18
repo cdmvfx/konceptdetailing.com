@@ -1,37 +1,14 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
+import { ListBlobResultBlob } from "@vercel/blob";
+import Image from "next/image";
 
-const Gallery = () => {
-  function importAll(r: __WebpackModuleApi.RequireContext) {
-    const images = r
-      .keys()
-      .map((item: string, index: number) => r(item));
-    return images;
-  }
-
-  const images = importAll(
-    require.context(
-      "../public/photos/gallery",
-      false,
-      /\.(png|jpe?g|svg)$/
-    )
-  );
-
-  const gallery = images.map((image, index) => (
-    <div
-      className="p-1 flex items-center justify-center h-full"
-      key={`gallery-photo-${index}`}>
-      <picture>
-        <img
-          className="object-fit h-full relative"
-          src={image.default.src}
-          alt=""
-        />
-      </picture>
-    </div>
-  ));
-
+const Gallery = ({
+  galleryPhotos,
+}: {
+  galleryPhotos: Array<string>;
+}) => {
   return (
     <div
       id="gallery"
@@ -88,7 +65,19 @@ const Gallery = () => {
           centerMode={false}
           showStatus={false}
           infiniteLoop={true}>
-          {gallery}
+          {galleryPhotos.map((url, index) => (
+            <div
+              className="p-1 flex items-center justify-center h-full"
+              key={`mobile-${url}`}>
+              <Image
+                className="object-fit h-full relative"
+                src={url}
+                alt=""
+                width={500}
+                height={500}
+              />
+            </div>
+          ))}
         </Carousel>
       </div>
       <div className="w-full hidden md:block z-10">
@@ -144,7 +133,19 @@ const Gallery = () => {
               </div>
             ) as any
           }>
-          {gallery}
+          {galleryPhotos.map((url, index) => (
+            <div
+              className="p-1 flex items-center justify-center h-full"
+              key={`desktop-${url}`}>
+              <Image
+                className="object-fit h-full relative"
+                src={url}
+                alt=""
+                width={600}
+                height={600}
+              />
+            </div>
+          ))}
         </Carousel>
       </div>
     </div>

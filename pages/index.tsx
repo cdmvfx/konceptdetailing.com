@@ -8,8 +8,12 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { ListBlobResultBlob, list } from "@vercel/blob";
 
-export default function Home() {
+export default function Home({
+  galleryPhotos,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.scrollY);
 
@@ -28,24 +32,14 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="">
+    <>
       <Head>
         <title>Koncept Detailing - Cars, SUVs, Motorcycles</title>
         <meta
           name="description"
-          content="Former United States Marine based in Tampa, Florida with over 5 years of experience in auto detailing."
+          content="Former United States Marine based in Tampa, Florida with over 8 years of experience in auto detailing."
         />
         <link rel="icon" href="/images/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <main className="relative overflow-hidden bg-[#111111]">
@@ -88,14 +82,33 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Services />
-        <About />
         <Testimonials />
-        <Gallery />
+        <Gallery galleryPhotos={galleryPhotos} />
+        <About />
         <FAQ />
         <Contact />
       </main>
-
-      <footer></footer>
-    </div>
+    </>
   );
 }
+
+export const getStaticProps: GetStaticProps = (async () => {
+  const galleryPhotosBlobs = await list({
+    prefix: "koncept-detailing/gallery/",
+    mode: "folded",
+  });
+
+  galleryPhotosBlobs.blobs.shift();
+
+  const galleryPhotos = galleryPhotosBlobs.blobs.map(
+    (image) => image.url
+  );
+
+  return {
+    props: {
+      galleryPhotos: galleryPhotos,
+    },
+  };
+}) satisfies GetStaticProps<{
+  galleryPhotos: Array<string>;
+}>;

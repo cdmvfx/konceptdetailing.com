@@ -1,5 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
               ease: "easeOut",
             },
           }}
-          viewport={{ amount: "500px" as any, once: true }}
+          viewport={{ once: true }}
           className="uppercase text-xl tracking-widest md:text-left md:text-4xl">
           FROM MACHINE GUNNER TO DETAILER
         </motion.div>
@@ -33,7 +34,7 @@ const About = () => {
                 ease: "easeOut",
               },
             }}
-            viewport={{ amount: "200px" as any, once: true }}
+            viewport={{ once: true }}
             className="w-32 md:m-0 md:w-full"
           />
         </div>
@@ -48,7 +49,7 @@ const About = () => {
               duration: 1,
             },
           }}
-          viewport={{ once: true, amount: "200px" as any }}
+          viewport={{ once: true }}
           className="text-left space-y-4  leading-8 md:text-xl md:leading-10">
           <p className="">
             My name is Kevin Martinez - Costa Rican born, raised in
@@ -92,9 +93,11 @@ const About = () => {
               },
             }}
             viewport={{ amount: 1, once: true }}>
-            <img
-              src="../photos/marine-1.jpg"
+            <Image
+              src="https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/marine-1.jpg"
               alt="Kevin Martinez Marine"
+              width={800}
+              height={800}
             />
           </motion.div>
         </div>
@@ -123,9 +126,11 @@ const About = () => {
               },
             }}
             viewport={{ amount: 1, once: true }}>
-            <img
-              src="../photos/marines-section.jpg"
+            <Image
+              src="https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/marines-section.jpg"
               alt="Kevin Martinez Squad"
+              width={800}
+              height={800}
             />
           </motion.div>
         </div>
@@ -154,9 +159,11 @@ const About = () => {
               },
             }}
             viewport={{ amount: 1, once: true }}>
-            <img
-              src="../photos/kevin-cr-sm.jpg"
+            <Image
+              src="https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/kevin-cr-sm.jpg"
               alt="Kevin Martinez Costa Rica"
+              width={800}
+              height={800}
             />
           </motion.div>
         </div>

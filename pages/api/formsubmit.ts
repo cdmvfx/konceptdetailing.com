@@ -1,7 +1,6 @@
 import { NextApiHandler } from "next";
-import clientPromise from "../../lib/mongodb";
-
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { db } from "../../drizzle";
+import { contactFormTable } from "../../drizzle/schema";
 
 const handler: NextApiHandler = async (req, res) => {
 
@@ -32,15 +31,12 @@ const handler: NextApiHandler = async (req, res) => {
 		Details: ${details}
 		`;
 
-	const client = await clientPromise;
-	const website = client.db('website');
-	const insertres = await website.collection('contact_form').insertOne({
-		date: new Date().toISOString(),
+	await db.insert(contactFormTable).values({
 		name: name,
 		email: email,
 		phone: phone,
-		details: details
-	});
+		details: details,
+	}).execute();
 
 	res.status(200).json({ status: "success" });
 }

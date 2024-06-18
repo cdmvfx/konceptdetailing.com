@@ -1,9 +1,11 @@
 import { PopupButton } from "react-calendly";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Hero = () => {
   const [width, setWidth] = useState(0);
+
+  const rootRef = useRef<HTMLDivElement>(null);
 
   function handleResize() {
     setWidth(window.innerWidth);
@@ -45,7 +47,8 @@ const Hero = () => {
   return (
     <div
       className="h-screen w-full border-white border-b z-10"
-      id="hero">
+      id="hero"
+      ref={rootRef}>
       <motion.div
         variants={container}
         initial="start"
@@ -58,9 +61,8 @@ const Hero = () => {
         </motion.div>
         <motion.div variants={item} className="kd-heading">
           <PopupButton
-            rootElement={
-              document.getElementById("__next") as HTMLElement
-            }
+            rootElement={rootRef.current as HTMLElement}
+            className="hover:bg-white hover:text-black transition-all"
             url="https://calendly.com/konceptdetailing"
             text="SCHEDULE A DETAIL"
             pageSettings={{
@@ -92,8 +94,8 @@ const Hero = () => {
             <source
               src={
                 width > 1024
-                  ? "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Horizontal.mp4"
-                  : "https://cdmvfx.s3.us-east-2.amazonaws.com/Koncept+Detailing/Videos/Koncept+Landing+Video+V2+Vertical+3.mp4"
+                  ? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Horizontal-ZRTfFqTNAWysu13e1sJbBbhovsq3xw.mp4"
+                  : "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/Koncept%20Landing%20Video%20V2%20Vertical%203-E7y5ZZhKVBzAPcVeLuErr03Jp6xBcv.mp4"
               }
               type="video/mp4"
             />

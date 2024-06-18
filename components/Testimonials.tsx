@@ -101,7 +101,7 @@ const Testimonials = () => {
                 ease: "easeOut",
               },
             }}
-            viewport={{ amount: 200, once: true }}
+            viewport={{ once: true }}
             className="space-y-2 flex-1 p-4 text-center kd-heading md:text-2xl md:leading-10 "
             key={"testimonial-" + index}>
             <div className="uppercase text-xl tracking-widest">

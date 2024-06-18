@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
@@ -13,6 +13,8 @@ const ContactForm = () => {
     phone: "",
     details: "",
   };
+
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const [inputs, setInputs] = useState(blankForm);
 
@@ -72,11 +74,14 @@ const ContactForm = () => {
   }, [handleReCaptchaVerify]);
 
   return (
-    <div className="pt-4 w-full space-y-8 text-center md:w-2/3 xl:w-1/3">
+    <div
+      className="pt-4 w-full space-y-8 text-center z-50 md:w-2/3 xl:w-1/3"
+      ref={rootRef}>
       <PopupButton
-        rootElement={document.getElementById("__next") as HTMLElement}
+        rootElement={rootRef.current as HTMLElement}
         url="https://calendly.com/konceptdetailing"
         text="SCHEDULE A DETAIL"
+        className="hover:bg-white hover:text-black transition-all"
         pageSettings={{
           backgroundColor: "ffffff",
           hideEventTypeDetails: false,
@@ -128,7 +133,7 @@ const ContactForm = () => {
       <div>
         <label htmlFor="name">Name</label>
         <input
-          className="w-full h-10 text-black text-center font-bold"
+          className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold"
           type="text"
           autoComplete="name"
           id="name"
@@ -140,7 +145,7 @@ const ContactForm = () => {
       <div>
         <label htmlFor="name">Email</label>
         <input
-          className="w-full h-10 text-black text-center font-bold"
+          className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold"
           type="text"
           autoComplete="email"
           id="email"
@@ -152,7 +157,7 @@ const ContactForm = () => {
       <div>
         <label htmlFor="name">Phone Number</label>
         <input
-          className="w-full h-10 text-black text-center font-bold"
+          className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold"
           type="number"
           autoComplete="phone"
           id="phone"
@@ -164,7 +169,7 @@ const ContactForm = () => {
       <div>
         <label htmlFor="name">Additional Details</label>
         <textarea
-          className="w-full h-10 text-black font-bold p-2"
+          className="w-full h-10 text-white bg-neutral-900 border border-neutral-800 text-center font-bold p-2"
           autoComplete="details"
           id="details"
           required

@@ -33,7 +33,7 @@ const FAQ = () => {
           opacity: 1,
           transition: { type: "tween", duration: 1, ease: "easeOut" },
         }}
-        viewport={{ amount: "500px" as any, once: true }}
+        viewport={{ once: true }}
         className="uppercase text-xl tracking-widest md:text-4xl">
         FAQ
       </motion.div>
@@ -48,7 +48,7 @@ const FAQ = () => {
               ease: "easeOut",
             },
           }}
-          viewport={{ amount: "200px" as any, once: true }}
+          viewport={{ once: true }}
           className="m-auto w-32 md:w-64"
         />
       </div>
