@@ -11,19 +11,19 @@ const Navbar = () => {
       value: "services",
     },
     {
-      label: "About Me",
-      value: "about",
-    },
-    {
       label: "Testimonials",
       value: "testimonials",
+    },
+    {
+      label: "Gallery",
+      value: "gallery",
     },
   ];
 
   const navLinksEnd = [
     {
-      label: "Gallery",
-      value: "gallery",
+      label: "About Me",
+      value: "about",
     },
     {
       label: "FAQ",
@@ -67,6 +67,10 @@ const Navbar = () => {
                   smooth={true}
                   offset={-150}
                   duration={500}
+                  rel="nofollow"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={label}
                   onClick={() => setMenu(false)}>
                   {label}
                 </Link>
@@ -86,7 +90,11 @@ const Navbar = () => {
               spy={false}
               smooth={true}
               offset={-70}
-              duration={500}>
+              duration={500}
+              rel="nofollow"
+              role="button"
+              tabIndex={0}
+              aria-label={label}>
               {label}
             </Link>
           </div>
@@ -98,7 +106,11 @@ const Navbar = () => {
             spy={false}
             smooth={true}
             offset={-70}
-            duration={500}>
+            duration={500}
+            rel="nofollow"
+            role="button"
+            tabIndex={0}
+            aria-label="Koncept Detailing">
             <Image
               alt="Koncept Detailing"
               src="/images/logo.svg"
@@ -122,7 +134,11 @@ const Navbar = () => {
               spy={false}
               smooth={true}
               offset={-70}
-              duration={500}>
+              duration={500}
+              rel="nofollow"
+              role="button"
+              tabIndex={0}
+              aria-label={label}>
               {label}
             </Link>
           </div>
