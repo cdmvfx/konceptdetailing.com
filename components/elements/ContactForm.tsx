@@ -2,7 +2,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { FaCheck } from "react-icons/fa";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import { PopupButton } from "react-calendly";
+import {
+  PopupButton,
+  useCalendlyEventListener,
+} from "react-calendly";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const ContactForm = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -21,6 +25,36 @@ const ContactForm = () => {
   const [token, setToken] = useState("");
 
   const [status, setStatus] = useState(false);
+
+  useCalendlyEventListener({
+    onProfilePageViewed: () => {
+      sendGAEvent({
+        event: "calendly-profile-page-viewed",
+      });
+    },
+    onDateAndTimeSelected: () => {
+      sendGAEvent({
+        event: "calendly-date-and-time-selected",
+      });
+    },
+    onEventTypeViewed: () => {
+      sendGAEvent({
+        event: "calendly-event-type-viewed",
+      });
+    },
+    onEventScheduled: (e) => {
+      sendGAEvent({
+        event: "calendly-event-scheduled",
+        value: e.data.payload,
+      });
+    },
+    onPageHeightResize: (e) => {
+      sendGAEvent({
+        event: "calendly-page-height-resized",
+        value: e.data.payload.height,
+      });
+    },
+  });
 
   const changeInputs = (
     key: "name" | "email" | "phone" | "details",
@@ -49,6 +83,15 @@ const ContactForm = () => {
     })
       .then((res) => res.json())
       .then((res) => {
+        sendGAEvent({
+          event: "contact-form-submit",
+          value: {
+            name: formdata.name,
+            email: formdata.email,
+            phone: formdata.phone,
+            details: formdata.details,
+          },
+        });
         console.log(res);
         setInputs(blankForm);
       })
