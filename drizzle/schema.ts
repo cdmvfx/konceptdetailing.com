@@ -1,4 +1,4 @@
-import { serial, text, timestamp, pgTable, pgSchema } from "drizzle-orm/pg-core";
+import { text, timestamp, pgSchema } from "drizzle-orm/pg-core";
 
 export const konceptSchema = pgSchema("koncept_detailing");
 
