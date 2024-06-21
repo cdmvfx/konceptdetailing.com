@@ -43,7 +43,7 @@ function Navbar(): JSX.Element {
 	return (
 		<div className="fixed z-40 w-full top-0 left-0 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border-b border-b-[#ffffff]">
 			<AnimatePresence mode="wait" initial={false}>
-				{menu ? (
+				{Boolean(menu) && (
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{
@@ -55,7 +55,8 @@ function Navbar(): JSX.Element {
 					>
 						<button
 							type="button"
-							className="cursor-pointer"
+							className="cursor-pointer p-2"
+							aria-label="Close Menu"
 							onClick={() => {
 								setMenu(false);
 							}}
@@ -78,6 +79,7 @@ function Navbar(): JSX.Element {
 									role="button"
 									tabIndex={0}
 									aria-label={label}
+									className="p-4"
 									onClick={() => {
 										setMenu(false);
 									}}
@@ -87,7 +89,7 @@ function Navbar(): JSX.Element {
 							</div>
 						))}
 					</motion.div>
-				) : null}
+				)}
 			</AnimatePresence>
 			<div className="flex flex-wrap justify-between md:justify-center items-center md:space-x-8 lg:space-x-12 py-4 px-8 md:-ml-[82px]">
 				{navLinksStart.map(({ label, value }) => (
@@ -135,6 +137,7 @@ function Navbar(): JSX.Element {
 				<button
 					type="button"
 					className="md:hidden uppercase tracking-widest text-xl cursor-pointer"
+					aria-label="Open Menu"
 					onClick={() => {
 						setMenu(true);
 					}}

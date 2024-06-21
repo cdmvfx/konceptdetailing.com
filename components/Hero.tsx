@@ -73,32 +73,30 @@ function Hero(): JSX.Element {
 					/>
 				</motion.div>
 			</motion.div>
-			{width ? (
-				<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
-					<video
-						className="w-full h-full object-cover absolute z-10"
-						poster={
-							width > 1024
-								? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.webp"
-								: "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.webp"
+			<div className="w-full h-screen absolute top-0 left-0 overflow-hidden border-b border-white">
+				<video
+					className="w-full h-full object-cover absolute z-10"
+					poster={
+						width && width > 1024
+							? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.webp"
+							: "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.webp"
+					}
+					preload="auto"
+					playsInline
+					autoPlay
+					muted
+					loop={false}
+				>
+					<source
+						src={
+							width && width > 1024
+								? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.mp4"
+								: "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.mp4"
 						}
-						preload="auto"
-						playsInline
-						autoPlay
-						muted
-						loop={false}
-					>
-						<source
-							src={
-								width > 1024
-									? "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-horizontal.mp4"
-									: "https://dg9sgroodeckomox.public.blob.vercel-storage.com/koncept-detailing/koncept-promo-vertical.mp4"
-							}
-							type="video/mp4"
-						/>
-					</video>
-				</div>
-			) : null}
+						type="video/mp4"
+					/>
+				</video>
+			</div>
 		</div>
 	);
 }

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import ContactForm from "./elements/ContactForm";
 
 function Contact(): JSX.Element {
@@ -34,9 +33,7 @@ function Contact(): JSX.Element {
 					className="m-auto w-32 md:w-64"
 				/>
 			</div>
-			<GoogleReCaptchaProvider reCaptchaKey="6LfkvOcdAAAAAA9bdAgSLgmyCfr0N8uej7Ia4WMQ">
-				<ContactForm />
-			</GoogleReCaptchaProvider>
+			<ContactForm />
 		</div>
 	);
 }

@@ -173,7 +173,7 @@ function ContactForm(): JSX.Element {
 
 	return (
 		<form
-			className="pt-4 w-full space-y-8 text-center z-50 md:w-2/3 xl:w-1/3"
+			className="pt-4 w-full space-y-8 text-center z-20 md:w-2/3 xl:w-1/3"
 			ref={rootRef}
 		>
 			<PopupButton

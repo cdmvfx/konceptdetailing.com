@@ -30,7 +30,7 @@ function Gallery({
 					dynamicHeight={false}
 					renderArrowPrev={(prevClicked) => (
 						<div
-							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150"
+							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out left-4 hover:scale-110 bg-black/50 rounded-full"
 							onClick={prevClicked}
 							onKeyDown={(e) => {
 								if (e.key === "Enter") {
@@ -46,7 +46,7 @@ function Gallery({
 					)}
 					renderArrowNext={(nextClicked) => (
 						<div
-							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150 right-0"
+							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out right-4 hover:scale-110 bg-black/50 rounded-full"
 							onClick={nextClicked}
 							onKeyDown={(e) => {
 								if (e.key === "Enter") {
@@ -61,24 +61,32 @@ function Gallery({
 						</div>
 					)}
 					renderIndicator={(indiClicked, indiSelected) => (
-						<div
+						<li
 							style={{
 								width: "calc((100% / 42) - .3rem)",
 								height: "100%",
 							}}
-							className={`relative bottom-[90%] m-[.1rem] inline-block border-t-2 border-black ${
-								indiSelected ? "border-t-white" : ""
-							}`}
-							onClick={indiClicked}
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
-									indiClicked(e);
-								}
-							}}
-							tabIndex={0}
-							role="button"
-							aria-label="Indicator"
-						/>
+							className="inline-block mx-[0.1rem]"
+						>
+							<div
+								style={{
+									width: "100%",
+									height: "100%",
+								}}
+								className={`relative bottom-[90%] m-[.1rem] inline-block border-t-2 border-black ${
+									indiSelected ? "border-t-white" : ""
+								}`}
+								onClick={indiClicked}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										indiClicked(e);
+									}
+								}}
+								tabIndex={0}
+								role="button"
+								aria-label="Indicator"
+							/>
+						</li>
 					)}
 					statusFormatter={getStatusFormatter}
 					centerMode={false}
@@ -116,7 +124,7 @@ function Gallery({
 					showStatus={false}
 					renderArrowPrev={(prevClicked) => (
 						<div
-							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150"
+							className="absolute z-20 top-[48%] left-4 p-4 transition-all cursor-pointer ease-in-out hover:scale-110 bg-black/50 rounded-full"
 							onClick={prevClicked}
 							onKeyDown={(e) => {
 								if (e.key === "Enter") {
@@ -132,7 +140,7 @@ function Gallery({
 					)}
 					renderArrowNext={(nextClicked) => (
 						<div
-							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-150 right-0"
+							className="absolute z-20 top-[48%] p-4 transition-all cursor-pointer ease-in-out hover:scale-110 right-4 bg-black/50 rounded-full"
 							onClick={nextClicked}
 							onKeyDown={(e) => {
 								if (e.key === "Enter") {
@@ -147,24 +155,32 @@ function Gallery({
 						</div>
 					)}
 					renderIndicator={(indiClicked, indiSelected) => (
-						<div
+						<li
 							style={{
 								width: "calc((100% / 42) - .6rem)",
 								height: "100%",
 							}}
-							className={`relative bottom-[90%] m-1 inline-block border-t-2 border-black ${
-								indiSelected ? "border-t-white" : ""
-							}`}
-							onClick={indiClicked}
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
-									indiClicked(e);
-								}
-							}}
-							tabIndex={0}
-							role="button"
-							aria-label="Indicator"
-						/>
+							className="inline-block mx-1"
+						>
+							<div
+								style={{
+									width: "100%",
+									height: "100%",
+								}}
+								className={`relative bottom-[90%] inline-block border-t-2 border-black ${
+									indiSelected ? "border-t-white" : ""
+								}`}
+								onClick={indiClicked}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										indiClicked(e);
+									}
+								}}
+								tabIndex={0}
+								role="button"
+								aria-label="Indicator"
+							/>
+						</li>
 					)}
 					statusFormatter={getStatusFormatter}
 				>
