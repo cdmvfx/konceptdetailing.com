@@ -69,30 +69,23 @@ function ContactForm(): JSX.Element {
 
 	useCalendlyEventListener({
 		onProfilePageViewed: () => {
-			sendGAEvent({
-				event: "calendly_profile_page_viewed",
-			});
+			sendGAEvent("event", "calendly_profile_page_viewed");
 		},
 		onDateAndTimeSelected: () => {
-			sendGAEvent({
-				event: "calendly_date_and_time_selected",
-			});
+			sendGAEvent("event", "calendly_date_and_time_selected");
 		},
 		onEventTypeViewed: () => {
-			sendGAEvent({
-				event: "calendly_event_type_viewed",
-			});
+			sendGAEvent("event", "calendly_event_type_viewed");
 		},
 		onEventScheduled: (e) => {
-			sendGAEvent({
-				event: "calendly_event_scheduled",
-				value: e.data.payload,
+			sendGAEvent("event", "calendly_event_scheduled", {
+				event: e.data.payload.event.uri,
+				invitee: e.data.payload.invitee.uri,
 			});
 		},
 		onPageHeightResize: (e) => {
-			sendGAEvent({
-				event: "calendly_page_height_resized",
-				value: e.data.payload.height,
+			sendGAEvent("event", "calendly_page_height_resized", {
+				height: e.data.payload.height,
 			});
 		},
 	});
@@ -151,14 +144,8 @@ function ContactForm(): JSX.Element {
 
 				// eslint-disable-next-line no-console -- testing
 				console.log("sendGAEvent");
-				sendGAEvent({
-					event: "contact_form_submit",
-					value: {
-						name: formdata.name,
-						email: formdata.email,
-						phone: formdata.phone,
-						details: formdata.details,
-					},
+				sendGAEvent("event", "contact_form_submit", {
+					email: formdata.email,
 				});
 				setInputs(blankForm);
 				setSuccess(true);
