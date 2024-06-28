@@ -70,28 +70,28 @@ function ContactForm(): JSX.Element {
 	useCalendlyEventListener({
 		onProfilePageViewed: () => {
 			sendGAEvent({
-				event: "calendly-profile-page-viewed",
+				event: "calendly_profile_page_viewed",
 			});
 		},
 		onDateAndTimeSelected: () => {
 			sendGAEvent({
-				event: "calendly-date-and-time-selected",
+				event: "calendly_date_and_time_selected",
 			});
 		},
 		onEventTypeViewed: () => {
 			sendGAEvent({
-				event: "calendly-event-type-viewed",
+				event: "calendly_event_type_viewed",
 			});
 		},
 		onEventScheduled: (e) => {
 			sendGAEvent({
-				event: "calendly-event-scheduled",
+				event: "calendly_event_scheduled",
 				value: e.data.payload,
 			});
 		},
 		onPageHeightResize: (e) => {
 			sendGAEvent({
-				event: "calendly-page-height-resized",
+				event: "calendly_page_height_resized",
 				value: e.data.payload.height,
 			});
 		},
@@ -149,8 +149,10 @@ function ContactForm(): JSX.Element {
 					throw new Error(res.message);
 				}
 
+				// eslint-disable-next-line no-console -- testing
+				console.log("sendGAEvent");
 				sendGAEvent({
-					event: "contact-form-submit",
+					event: "contact_form_submit",
 					value: {
 						name: formdata.name,
 						email: formdata.email,
